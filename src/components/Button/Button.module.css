@@ -1,0 +1,22 @@
+.button {
+  display: block;
+  border-radius: var(--border-radius);
+  border: 3px solid transparent;
+  padding: var(--space-m) var(--space-l);
+  font-size: inherit;
+  font-family: inherit;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  outline: none;
+}
+
+.button:focus {
+  transition: border-color var(--transition-duration) ease-in;
+  border-color: var(--color-text);
+}
+
+.button:disabled {
+  transition: background-color var(--transition-duration) ease-in;
+  background-color: var(--color-grey);
+  opacity: 0.5;
+}

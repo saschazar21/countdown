@@ -11,6 +11,7 @@ import manifest from './config/manifest';
 const pwaConfig: Partial<VitePWAOptions> = {
   registerType: 'autoUpdate',
   manifest,
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
 };
 
 // https://vitejs.dev/config/

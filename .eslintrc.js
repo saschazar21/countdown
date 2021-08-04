@@ -8,12 +8,12 @@ module.exports = {
     'prettier',
     'preact',
   ],
-  rules: {
-    'jest/valid-expect': 'off',
-  },
   settings: {
     'import/resolver': {
       'babel-module': {},
     },
+  },
+  globals: {
+    JSX: 'readonly',
   },
 };

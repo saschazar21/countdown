@@ -1,7 +1,17 @@
 :root {
-  --dark: hsl(210, 30%, 11%);
-  --light: hsl(206, 47%, 94%);
-  --primary: hsl(202, 66%, 39%);
-  --secondary: hsl(21, 14%, 44%);
-  --secondary-light: hsl(45, 41%, 84%);
+  --color-text: hsl(210, 30%, 11%);
+  --color-bg: hsl(206, 47%, 94%);
+  --color-primary: hsl(202, 66%, 39%);
+  --color-secondary: hsl(21, 14%, 44%);
+  --color-secondary-light: hsl(45, 41%, 84%);
+  --color-grey: hsl(202, 10%, 39%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: hsl(206, 47%, 94%);
+    --color-bg: hsl(210, 30%, 11%);
+    --color-primary: hsl(202, 66%, 69%);
+    --color-grey: hsl(202, 10%, 75%);
+  }
 }

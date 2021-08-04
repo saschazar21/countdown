@@ -3,6 +3,7 @@ import pkg from '../package.json';
 export default {
   name: pkg.displayName,
   short_name: pkg.displayName,
+  description: pkg.description,
   icons: [
     {
       src: '/icons/android-chrome-192x192.png',

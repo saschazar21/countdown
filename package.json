@@ -21,10 +21,12 @@
     "lint": "run-s lint:*"
   },
   "dependencies": {
+    "classnames": "^2.3.1",
     "preact": "^10.5.13"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.0.0",
+    "@types/classnames": "^2.3.1",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
     "cssnano": "^5.0.7",

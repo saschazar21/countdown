@@ -72,8 +72,8 @@ const options: Options = {
       name: 'robots',
       content:
         process.env.CONTEXT === 'production'
-          ? 'index, follow'
-          : 'noindex, nofollow',
+          ? 'index,follow'
+          : 'noindex,nofollow',
     },
   ],
 };

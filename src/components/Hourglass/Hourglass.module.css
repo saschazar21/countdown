@@ -1,0 +1,17 @@
+.wrapper {
+  width: 100%;
+  height: auto;
+}
+
+.hourglass {
+  fill: var(--color-text);
+}
+
+.sand {
+  fill: var(--color-secondary);
+  transform-origin: center center;
+}
+
+.elapsed {
+  transform-origin: bottom center;
+}

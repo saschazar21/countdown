@@ -1,20 +1,14 @@
-import { Logo } from './logo';
+import { useEffect } from 'preact/hooks';
+import { registerSW } from 'virtual:pwa-register';
 
-export function App() {
-  return (
-    <>
-      <Logo />
-      <p>Hello Vite + Preact!</p>
-      <p>
-        <a
-          class="link"
-          href="https://preactjs.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Preact
-        </a>
-      </p>
-    </>
-  );
-}
+import { Index } from 'pages/Index';
+
+export const App = (): JSX.Element => {
+  useEffect(() => {
+    registerSW({
+      onOfflineReady: () => console.log('App is now offline-ready.'),
+    })(true);
+  }, []);
+
+  return <Index />;
+};

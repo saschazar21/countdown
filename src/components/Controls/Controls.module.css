@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  gap: var(--space-m);
+}
+
+.playpause {
+  flex: 1 0 auto;
+}
+
+.stop {
+  flex: 0 1 auto;
+}

@@ -1,0 +1,21 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.hourglassWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 0 auto;
+}
+
+.hourglass {
+  max-width: 80vw;
+}
+
+.controls {
+  flex: 0 0 auto;
+  margin: var(--space-s);
+}
