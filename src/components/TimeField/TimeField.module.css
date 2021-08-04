@@ -1,0 +1,41 @@
+.wrapper {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  border-radius: var(--border-radius);
+  border: 3px solid transparent;
+  padding: var(--space-s) var(--space-l);
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  font-size: 2.5rem;
+}
+
+.wrapper:focus-within {
+  transition: border-color var(--transition-duration) ease-in;
+  border-color: var(--color-text);
+}
+
+.input {
+  position: absolute;
+  border: 0;
+  clip: rect(0 0 0 0);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.segment:not(:last-of-type)::after {
+  content: ':';
+  opacity: 0.667;
+}
+
+.disabled {
+  opacity: 0.667;
+}
+
+.disabled::after {
+  opacity: 1;
+}
