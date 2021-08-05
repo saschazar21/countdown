@@ -49,24 +49,15 @@
 }
 
 .wrapper {
-  width: 100%;
-  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hourglass {
-  fill: hsl(var(--color-text));
+  max-width: 80vw;
 }
 
 .ring {
-  animation: ring 1s infinite linear;
-}
-
-.sand {
-  transition: transform 0.1s ease;
-  fill: hsl(var(--color-secondary));
-  transform-origin: center 7.25px;
-}
-
-.elapsed {
-  transform-origin: center 14.75px;
+  animation: var(--animation, ring 1s infinite linear);
 }

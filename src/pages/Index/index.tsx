@@ -1,7 +1,7 @@
 import { StoreContext } from 'storeon/preact';
 
 import { Controls } from 'components/Controls';
-import { Hourglass } from 'components/Hourglass';
+import { HourglassView } from 'components/HourglassView';
 import store from 'store';
 
 import styles from 'pages/Index/Index.module.css';
@@ -12,9 +12,7 @@ export const Index = (): JSX.Element => {
       <h1 className="visually-hidden">Countdown</h1>
       <section className={styles.layout}>
         <StoreContext.Provider value={store}>
-          <div className={styles.hourglassWrapper}>
-            <Hourglass className={styles.hourglass} />
-          </div>
+          <HourglassView className={styles.hourglassWrapper} />
           <Controls className={styles.controls} />
         </StoreContext.Provider>
       </section>

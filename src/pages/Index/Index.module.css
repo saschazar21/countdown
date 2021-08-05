@@ -5,14 +5,7 @@
 }
 
 .hourglassWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex: 1 0 auto;
-}
-
-.hourglass {
-  max-width: 80vw;
 }
 
 .controls {

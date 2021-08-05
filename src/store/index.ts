@@ -1,6 +1,8 @@
 import { createStoreon, StoreonModule } from 'storeon';
 import { storeonLogger } from 'storeon/devtools';
 
+import { playAlarm, stopAlarm } from 'helpers/alarm';
+
 const FINISH_TIMEOUT = 6000; // alarm.mp3 has a duration of 2 seconds
 const TICK_INTERVAL = 100;
 
@@ -26,7 +28,7 @@ const countdown: StoreonModule<CountdownState, CountdownEvents> = (store) => {
   let interval: number;
   let timeout: number;
 
-  store.on('@dispatch', ({ state }) => {
+  store.on('@dispatch', async ({ state }) => {
     interval && state !== 'play' && clearInterval(interval);
 
     if (state === 'play') {
@@ -35,6 +37,13 @@ const countdown: StoreonModule<CountdownState, CountdownEvents> = (store) => {
     }
 
     timeout && state !== 'finish' && clearTimeout(timeout);
+
+    try {
+      state === 'finish' && (await playAlarm());
+      state !== 'finish' && stopAlarm();
+    } catch {
+      // fail silently
+    }
   });
 
   store.on('@init', () => ({ initial: 0, remaining: 0, state: 'stop' }));

@@ -10,6 +10,12 @@
   --transition-duration: 300ms;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --animation: noop;
+  }
+}
+
 html,
 body {
   min-height: 100vh;

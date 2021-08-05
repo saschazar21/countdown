@@ -1,30 +1,17 @@
-import { useMemo } from 'preact/hooks';
-import { useStoreon } from 'storeon/preact';
 import classNames from 'classnames';
 
-import { CountdownEvents, CountdownState } from 'store';
-
-import styles from 'components/Hourglass/Hourglass.module.css';
+import styles from 'components/HourglassView/Hourglass/Hourglass.module.css';
 
 export const Hourglass = ({
   className: customClassName,
+  elapsed = 1.0,
+  remaining = 0.0,
 }: {
   className?: string;
+  elapsed?: number;
+  remaining: number;
 }): JSX.Element => {
-  const { initial, remaining, state } = useStoreon<
-    CountdownState,
-    CountdownEvents
-  >('initial', 'remaining', 'state');
-
-  const [remainingFraction, elapsedFraction] = useMemo(() => {
-    const fraction = remaining / initial;
-    const value = !isNaN(fraction) ? fraction : 0;
-    return [value, 1 - value];
-  }, [initial, remaining]);
-
-  const className = classNames(customClassName, styles.wrapper, {
-    [styles.ring]: state === 'finish',
-  });
+  const className = classNames(customClassName, styles.wrapper);
 
   return (
     <svg
@@ -51,7 +38,7 @@ export const Hourglass = ({
       <g mask="url(#remaining)">
         <rect
           className={styles.sand}
-          style={{ transform: `scaleY(${remainingFraction})` }}
+          style={{ transform: `scaleY(${remaining})` }}
           x="3"
           y="1.25"
           width="8"
@@ -75,7 +62,7 @@ export const Hourglass = ({
       <g mask="url(#elapsed)">
         <rect
           className={classNames(styles.sand, styles.elapsed)}
-          style={{ transform: `scaleY(${elapsedFraction})` }}
+          style={{ transform: `scaleY(${elapsed})` }}
           x="3"
           y="8.75"
           width="8"
