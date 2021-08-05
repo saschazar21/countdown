@@ -1,18 +1,21 @@
 .wrapper {
   display: flex;
-  position: relative;
   justify-content: center;
   border-radius: var(--border-radius);
   border: 3px solid transparent;
   padding: var(--space-s) var(--space-l);
-  background-color: var(--color-primary);
-  color: var(--color-bg);
   font-size: 2.5rem;
 }
 
-.wrapper:focus-within {
+.enabled {
+  position: relative;
+  background-color: hsl(var(--color-primary));
+  color: hsl(var(--color-bg));
+}
+
+.enabled:focus-within {
   transition: border-color var(--transition-duration) ease-in;
-  border-color: var(--color-text);
+  border-color: hsl(var(--color-text));
 }
 
 .input {
@@ -27,15 +30,21 @@
   width: 100%;
 }
 
-.segment:not(:last-of-type)::after {
-  content: ':';
-  opacity: 0.667;
-}
-
+.segment::after,
+.tenths::before,
 .disabled {
   opacity: 0.667;
 }
 
+.segment:not(:last-of-type)::after {
+  content: ':';
+}
+
+.tenths::before {
+  content: '.';
+}
+
+.disabled::before,
 .disabled::after {
   opacity: 1;
 }

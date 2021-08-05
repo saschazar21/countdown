@@ -17,5 +17,5 @@
 
 .controls {
   flex: 0 0 auto;
-  margin: var(--space-s);
+  margin: var(--space-m);
 }

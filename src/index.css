@@ -17,11 +17,11 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
-  background: var(--color-bg);
+  background: hsl(var(--color-bg));
   font-family: var(--font-monospace);
   font-weight: 400;
   font-size: 1.25rem;
-  color: var(--color-text);
+  color: hsl(var(--color-text));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -48,4 +48,11 @@ h1 {
 
 #app {
   height: 100%;
+}
+
+@media (min-width: 420px) {
+  #app {
+    margin: 0 auto;
+    width: 420px;
+  }
 }

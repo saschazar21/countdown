@@ -5,18 +5,18 @@
   padding: var(--space-m) var(--space-l);
   font-size: inherit;
   font-family: inherit;
-  background-color: var(--color-primary);
-  color: var(--color-bg);
+  background-color: hsl(var(--color-primary));
+  color: hsl(var(--color-bg));
   outline: none;
 }
 
 .button:focus {
   transition: border-color var(--transition-duration) ease-in;
-  border-color: var(--color-text);
+  border-color: hsl(var(--color-text));
 }
 
 .button:disabled {
   transition: background-color var(--transition-duration) ease-in;
-  background-color: var(--color-grey);
-  opacity: 0.5;
+  background-color: hsl(var(--color-grey), 0.25);
+  color: hsl(var(--color-text), 0.667);
 }
