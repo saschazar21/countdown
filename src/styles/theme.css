@@ -3,8 +3,9 @@
   --color-bg: 206, 47%, 94%;
   --color-primary: 202, 66%, 35%;
   --color-secondary: 21, 14%, 44%;
-  --color-secondary-light: 45, 41%, 84%;
   --color-grey: 202, 10%, 39%;
+  --color-success: 118, 39%, 36%;
+  --color-warning: 36, 99%, 42%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,5 +14,7 @@
     --color-bg: 210, 30%, 11%;
     --color-primary: 202, 66%, 69%;
     --color-grey: 202, 10%, 75%;
+    --color-success: 118, 39%, 66%;
+    --color-warning: 36, 99%, 72%;
   }
 }

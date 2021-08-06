@@ -9,10 +9,19 @@
   width: 100%;
 }
 
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25em;
+}
+
 .playpause {
   flex: 1 0 auto;
+  background-color: hsl(var(--color-success));
 }
 
 .stop {
   flex: 0 1 auto;
+  background-color: hsl(var(--color-warning));
 }

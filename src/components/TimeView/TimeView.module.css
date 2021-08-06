@@ -4,7 +4,7 @@
   border-radius: var(--border-radius);
   border: 3px solid transparent;
   padding: var(--space-s) var(--space-l);
-  font-size: 2.5rem;
+  font-size: 1.75rem;
 }
 
 .enabled {
@@ -47,4 +47,10 @@
 .disabled::before,
 .disabled::after {
   opacity: 1;
+}
+
+@media (min-width: 375px) {
+  .wrapper {
+    font-size: 2.5rem;
+  }
 }

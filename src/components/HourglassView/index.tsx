@@ -31,7 +31,11 @@ export const HourglassView = ({
   };
 
   return (
-    <div className={className} onClick={handleClick}>
+    <div
+      className={className}
+      onClick={state === 'finish' ? handleClick : undefined}
+      tabIndex={state === 'finish' ? 0 : undefined}
+    >
       <Hourglass
         className={classNames(styles.hourglass, {
           [styles.ring]: state === 'finish',

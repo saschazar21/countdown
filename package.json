@@ -40,7 +40,6 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.6",
     "postcss-import": "^14.0.2",
-    "postcss-normalize": "^10.0.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.3.2",
     "stylelint": "^13.13.1",
@@ -50,6 +49,7 @@
     "vite": "^2.4.4",
     "vite-plugin-html-config": "^1.0.5",
     "vite-plugin-pwa": "^0.9.3",
+    "vite-plugin-react-svg": "^0.2.0",
     "vite-tsconfig-paths": "^3.3.13"
   }
 }

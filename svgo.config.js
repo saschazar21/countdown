@@ -1,4 +1,8 @@
 module.exports = {
   multipass: true,
-  plugins: [{ removeDimensions: true }, { removeViewBox: false }],
+  plugins: [
+    { removeDimensions: true },
+    { removeViewBox: false },
+    { removeTitle: false },
+  ],
 };
