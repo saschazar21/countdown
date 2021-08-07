@@ -16,8 +16,15 @@ export const TimeField = (
   const { className: customClassName, ...rest } = props;
   const inputRef = useRef<HTMLInputElement>(null);
   const [value, setValue] = useState('');
-  const { dispatch } = useStoreon<CountdownState, CountdownEvents>();
-  const seconds = useMemo(() => convertTimeInputToSeconds(value), [value]);
+  const { dispatch, initial } = useStoreon<CountdownState, CountdownEvents>(
+    'initial',
+  );
+
+  const seconds = useMemo(
+    () => convertTimeInputToSeconds(value) || Math.floor(initial * 0.001),
+    [initial, value],
+  );
+
   const segments = useMemo(
     () =>
       convertSecondsToTimeSegments(seconds).map((segment) =>
@@ -28,8 +35,16 @@ export const TimeField = (
 
   const className = classNames(customClassName, styles.wrapper, styles.enabled);
 
-  const handleKeyUp = (e: Event): void => {
+  const handleKeyUp = (e: KeyboardEvent): void => {
+    if (e.key === 'Enter') {
+      return handleBlur();
+    }
+
     const { value: inputValue } = e.target as HTMLInputElement;
+    if (!inputValue?.length) {
+      return;
+    }
+
     const sanitized = inputValue.replace(/[^0-9]/g, ''); // remove non-numeric chars
     setValue(sanitized);
   };
@@ -38,10 +53,10 @@ export const TimeField = (
     inputRef.current?.focus();
   };
 
+  const handleInputBlur = () => value.length && dispatch('set', seconds * 1000);
+
   const handleBlur = (): void => {
-    if (inputRef.current) {
-      inputRef.current.value = '';
-    }
+    inputRef.current && setValue('');
     inputRef.current?.blur();
   };
 
@@ -75,7 +90,7 @@ export const TimeField = (
       <input
         id="time-input"
         className={styles.input}
-        onBlur={() => seconds > 0 && dispatch('set', seconds * 1000)}
+        onBlur={handleInputBlur}
         onKeyUp={handleKeyUp}
         ref={inputRef}
         maxLength={6}
