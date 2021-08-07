@@ -9,11 +9,13 @@ export default {
       src: '/icons/android-chrome-192x192.png',
       sizes: '192x192',
       type: 'image/png',
+      purpose: 'maskable any',
     },
     {
       src: '/icons/android-chrome-256x256.png',
       sizes: '256x256',
       type: 'image/png',
+      purpose: 'maskable any',
     },
   ],
   theme_color: pkg.color,
