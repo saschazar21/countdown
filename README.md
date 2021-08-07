@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/icons/android-chrome-192.png" alt="The icon showing a stylized hourglass" width="192px" />
+  <img src="public/icons/android-chrome-192x192.png" alt="The icon showing a stylized hourglass" width="192px" />
   <br />
   <h1><a href="https://countdown.sascha.app/" rel="noopener noreferrer">Countdown</a></h1>
   <strong>⏲️ An offline-ready countdown timer.</strong>
