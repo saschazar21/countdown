@@ -12,7 +12,7 @@ export const HourglassView = ({
 }: {
   className?: string;
 }): JSX.Element => {
-  const { dispatch, initial, remaining, state } = useStoreon<
+  const { initial, remaining, state } = useStoreon<
     CountdownState,
     CountdownEvents
   >('initial', 'remaining', 'state');
@@ -25,17 +25,8 @@ export const HourglassView = ({
 
   const className = classNames(customClassName, styles.wrapper);
 
-  const handleClick = (e: MouseEvent) => {
-    e.preventDefault();
-    state === 'finish' && dispatch('reset');
-  };
-
   return (
-    <div
-      className={className}
-      onClick={state === 'finish' ? handleClick : undefined}
-      tabIndex={state === 'finish' ? 0 : undefined}
-    >
+    <div className={className}>
       <Hourglass
         className={classNames(styles.hourglass, {
           [styles.ring]: state === 'finish',

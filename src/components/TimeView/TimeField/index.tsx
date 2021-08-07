@@ -29,7 +29,8 @@ export const TimeField = (
 
   const handleKeyUp = (e: Event): void => {
     const { value: inputValue } = e.target as HTMLInputElement;
-    setValue(inputValue);
+    const sanitized = inputValue.replace(/[^0-9]/g, ''); // remove non-numeric chars
+    setValue(sanitized);
   };
 
   const handleFocus = (): void => {
