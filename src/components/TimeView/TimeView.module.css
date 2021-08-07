@@ -1,8 +1,9 @@
 .wrapper {
   display: flex;
+  position: relative;
   justify-content: center;
   border-radius: var(--border-radius);
-  border: 3px solid transparent;
+  border: var(--border-width) solid transparent;
   padding: var(--space-s) var(--space-l);
   font-size: 1.75rem;
 }

@@ -2,12 +2,13 @@ import { useMemo, useRef, useState } from 'preact/hooks';
 import { useStoreon } from 'storeon/preact';
 import classNames from 'classnames';
 
-import styles from 'components/TimeView/TimeView.module.css';
 import {
   convertSecondsToTimeSegments,
   convertTimeInputToSeconds,
 } from 'helpers/time';
 import { CountdownEvents, CountdownState } from 'store';
+
+import styles from 'components/TimeView/TimeView.module.css';
 
 export const TimeField = (
   props: JSX.HTMLAttributes<HTMLInputElement>,

@@ -1,7 +1,7 @@
 .button {
   display: block;
   border-radius: var(--border-radius);
-  border: 3px solid transparent;
+  border: var(--border-width) solid transparent;
   padding: var(--space-m) var(--space-l);
   font-size: inherit;
   font-family: inherit;
