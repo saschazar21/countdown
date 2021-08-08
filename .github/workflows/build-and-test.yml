@@ -40,14 +40,14 @@ jobs:
         uses: saschazar21/actions/packages/localhost-screenshot@main
         with:
           devices: iPad, iPhone 11, Desktop
-          dist: build
+          dist: dist
 
       - name: Create website screenshots (dark mode)
         uses: saschazar21/actions/packages/localhost-screenshot@main
         with:
           dark: true
           devices: iPad, iPhone 11, Desktop
-          dist: build
+          dist: dist
 
       - name: Upload screenshots
         uses: actions/upload-artifact@v2
